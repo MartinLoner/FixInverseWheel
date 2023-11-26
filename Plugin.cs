@@ -14,8 +14,6 @@ namespace FixInverseWheel
 
         internal new static ManualLogSource Logger;
 
-        public ConfigEntry<bool> IsInvertScrollDirection { get; private set; }
-
         private Harmony _harmony;
         private bool _isPatched;
 
@@ -24,9 +22,6 @@ namespace FixInverseWheel
             _instance = this;
 
             Logger = base.Logger;
-
-            IsInvertScrollDirection = Config.Bind("General", "InvertScrollDirection", true, "Invert scroll direction");
-            Logger.LogInfo($"Invert scroll direction loaded from config: {IsInvertScrollDirection.Value}");
 
             PatchAll();
 
