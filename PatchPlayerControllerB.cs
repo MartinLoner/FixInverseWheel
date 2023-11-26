@@ -10,7 +10,7 @@ public static class PatchPlayerControllerBHelpers
 {
     public static double ConditionalInvertScrollAmount(double scrollAmount)
     {
-        return FixInverseWheel.Instance.IsInvertScrollDirection.Value ? -scrollAmount : scrollAmount;
+        return true ? -scrollAmount : scrollAmount;
     }
 }
 [HarmonyPatch(typeof(PlayerControllerB))]
